@@ -1,0 +1,18 @@
+{
+    "consul": "{{.CONSUL_ADDRESS}}",
+	"logging": {
+		"level": "INFO",
+		"format": "default",
+		"output": "stdout"
+	},
+    "services": [
+		{
+		    "name": "athena",
+		    "port": 8080,
+		    "interfaces": ["eth0"],
+		    "health": "/usr/local/bin/weaver_health.sh",
+		    "poll": 1,
+		    "ttl": 5
+		}
+    ]
+}
